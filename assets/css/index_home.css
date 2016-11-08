@@ -1,0 +1,378 @@
+@font-face{
+    font-family:"Eurostib";
+    src: url(http://165.98.75.219:8448/UMA/assets/font/eurostile/Eurostib.ttf);
+}
+@font-face{
+    font-family:"Eurosti";
+    src: url(http://165.98.75.219:8448/UMA/assets/font/eurostile/Eurosti.ttf);
+}
+html {
+    font-family: Eurostib;
+}
+
+/******style header ****/
+nav{
+    background-color:#144229;
+}
+.nav-wrapper img{
+    width: 250px;
+    margin: 10px;
+}
+.icon{
+    position: absolute;
+   top: 20px;
+}
+.out{
+    font-size: 12px;
+}
+.out .left{
+     margin-right: 0px;
+ }
+/****** END style header ****/
+
+/******style nav ****/
+.lineas{
+    padding-top: 18px;
+    position: absolute;
+    width: 100%;
+    color:#144229;
+    text-align: center;
+    font-weight: 800;
+    line-height: 5%;
+}
+
+.lineas b{
+    font-size: 30px;
+}
+.lineas p{
+    font-size: 16px;
+}
+@media screen and (max-width: 570px) {
+
+    .lineas h5, h6{
+        font-size: 12px;
+        line-height: 75%;
+    }
+}
+/****** END style nav ****/
+
+/******** style menu left ****/
+.collection a.collection-item {
+    color: #144229;
+}
+.collection .collection-item {
+    border-bottom: 5px solid #f5f5f5;
+}
+.collection .activo{
+    background-color: #b9dcbb;
+    font-weight: 800;
+}
+.border{
+    border-collapse: collapse;
+    border-spacing:0;
+}
+.color1{
+    color:#000000;
+}
+.border tbody> tr{
+    border-bottom-color: #00C853;
+}
+.tab{
+    background-color: #b9dcbb;
+    font-weight: 800;
+}
+.tab tr{
+    border-spacing: 10px;
+}
+
+.total{
+    text-align: center;
+    color: #ffff00;
+    font-weight: 800;
+    padding-top: 0.5px;
+}
+/****** END style MENU LEFT ****/
+
+/******style Vista del contenido principal ****/
+#ContenidoCentral{
+    position: relative;
+    margin-left: -6px;
+    margin-top: 8px;
+}
+.principal{
+    height: 505px;
+    color: #144229;
+    text-align: center;
+    font-weight: 800;
+    padding-top: 35px;
+    line-height: 45%;
+}
+.principal b{
+    font-size: 50px;
+}
+.principal p{
+    text-align: center;
+    font-size: 22px;
+}
+.imgPrincipal{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+/******style style Vista del contenido principal ****/
+
+/****** encabezado de galeria ****/
+.aplica{
+    color:#144229;
+    border-color: #ffffff;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    margin-top: -10px;
+   text-shadow: 4px 4px 4px #777777;;
+}
+/******* END ENCABEZADO ********/
+
+/******* style cpntenido de cuenta ********/
+.cuenta{
+    height: 505px;
+    color: #144229;
+    font-weight: 900;
+    padding-top: 25px;
+}
+.cuenta b{
+    font-size: 35px;
+}
+.tituloC{
+    margin-top: 15px;
+}
+.tableDatos{
+    margin-top: -30px;
+}
+.tableDatos thead{
+    background-color:#144229;
+    color: #ffffff;
+}
+.tableDatos tbody{
+    font-family: Eurosti;
+}
+.tableDatos tbody tr:hover{
+    background-color:rgba(209, 209, 209, 0.84);
+}
+.tableDatos tbody tr.odd{
+    background-color:rgba(217, 242, 219, 0.88);
+}
+.tableDatos tbody tr.even{
+    background-color: #b9dcbb;
+}
+.tableDatos td{
+    text-align: center;
+}
+.busq{
+    color:#144229;
+    font-size: 16px;
+    font-weight: 900;
+    margin-top: 20px;
+}
+/******* END style cpntenido de cuenta ********/
+/*******  style cpntenido detalle de factura********/
+
+.lineHorizontal{
+    margin-top: 10px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+.lineVertical{
+    border-right: 1px solid #000;
+}
+.infoBox{
+    text-align: center;
+    margin-bottom: 5px;
+}
+.btn{
+    background-color: #144229;
+}
+.cuadro1{
+    background-color: #144229;
+    color:#ffff00;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.cuadro2{
+    background-color: #144229;
+    color:#ffff00;
+    padding-left: 40px;
+    position: absolute;
+    right: 0;
+    margin-right: 12px;
+    text-align: center;
+    border-top-left-radius:30px;
+    border-bottom-left-radius:30px;
+}
+/******* END style cpntenido detalle de factura********/
+
+/*********************************BEGIN STYLE ADMIN *******************************************/
+.marginEight{
+    margin-top: 80px;
+}
+.marginThen{
+    margin-top: 10px;
+}
+input[type=text]{
+    height: 2.5rem;
+}
+
+.form-help {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 10px;
+    margin-top: -5px;
+    margin-bottom: 20px;
+    position: relative;
+}
+/***************** CLASES MASTER****************/
+.backbtn{
+    text-align: right;
+    margin-right: 15px;
+}
+/***************** END CLASES MASTER****************/
+
+/***************** BEGIN CLASES CANJES DE PUNTOS*****************/
+.caja{
+    color: #144229;
+    font-weight: 900;
+    padding-top: 25px;
+    height: auto;
+}
+.caja b{
+    font-size: 35px;
+}
+
+#TableCanjePremio a{
+    text-decoration: none;
+}
+.add{
+    border-radius: 5px; margin-top: 15px;
+    font-weight: 100;
+}
+.opc{
+    padding: 5px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: 100;
+    font-size: 13px;
+}
+.ast{
+    color:red;
+    font-size:20px;
+}
+#TableBoucher a{
+    text-decoration: none;
+    margin: 15px;
+}
+.btns{
+    text-align: right;
+}
+.cuadroCanje{
+     font-family:Eurosti;
+     font-weight: 300;
+     background-color: #144229;
+     color:#ffff00;
+     text-align: center;
+     width: 300px;
+     position: relative;
+     margin: 0 auto;
+     line-height: 22px;
+     padding: 5px;
+     border-radius: 10px;
+ }
+
+.texto2{
+    font-size: 24px;
+    color: #ffffff;
+    font-weight:700;
+}
+/***************** END CLASES CANJES DE PUNTOS*****************/
+
+/***************** CLASES AGREGAR NUEVO CLIENTE*****************/
+.subtitulo{
+   color: #008000;
+    font-family: Eurosti;
+    font-weight: 100;
+}
+.background{
+    width: 100%;
+}
+.coleccion{
+    background-color: #b9dcbb;
+}
+.coleccion a{
+    color: #ffffff;
+}
+.cbActivo label{
+    font-size: 22px;
+    color: #144229;
+}
+/***************** END CLASES AGREGAR NUEVO CLIENTE****************
+
+.picker__date-display {
+    background-color: #144229;
+}
+.picker__weekday-display {
+    background-color: #2E7D32 !important;
+}
+.picker__day.picker__day--today {
+    color:   #2E7D32;
+}
+.picker__close, .picker__today {
+    color:  #2E7D32;
+}*/
+/***************** CLASES REPORTES****************/
+.coleccion{
+    margin-top: 35px;
+}
+.coleccion a{
+    color: #ffffff !important;
+    border-radius: 10px;
+    font-weight: 800;
+}
+/***************** END CLASES REPORTES****************/
+
+/***********CLASES MASTER DETALLE FACTURA*************/
+.cuadross{
+    font-family:Eurosti;
+    background-color: #144229;
+    color:#ffff00;
+    font-weight: 300;
+    width: 300px;
+    padding: 3px;
+    margin-top: 40px;
+    text-align: center;
+}
+.cuadross span{
+    font-size: 20px;
+    font-weight: 700;
+}
+.cuadro3{
+    margin-top: 40px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+    bottom: 0;
+}
+.cuadro4{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    right: 10px;
+}
+
+/***************VALIDACION FORM**************/
+.error{
+    color: red;
+    font-size: 16px;
+    position: absolute;
+    right: 0;
+}

@@ -87,11 +87,25 @@ class Canjes extends CI_Model
         }
         return 0;
     }
+
+    /*PARA EL ESTADO DE CUENTA DE PUNTOS POR CLIENTE*/
+    public function mdpEdoCta($Cliente, $Desde, $Hasta)
+    {
+        //$this->db->where('itmCls', $Cliente);        
+        $this->db->query("SELECT itmFact, itmDate, itmPts, APLI, itmPts-APLI itmDisponibles, 
+                                 CASE ItmStus WHEN 1 THEN 'ACTIVO' WHEN 0 THEN 'INACTIVO' ELSE '' END  AS 'Estado' 
+                          FROM view_admin_mtpts_full 
+                          WHERE itmCls = '".$Cliente."' AND itmDate Between '".$Desde."' and '".$Hasta."' ");
+        if ($query->num_rows() > 0)
+        {
+            return $query->result_array();
+        }
+        return 0;
+    }
+
     /*LISTA DE CLIENTES QUE APLICAN A LOS PREMIOS SI LAS FACTURAS ESTAN EN ESTADO = "CANCELADA"*/
     public function bouchers($slug)
     {
-
-
         $this->db->where('itmCls', $slug);
         $this->db->where('itmStus', 1);
         $this->db->where('apli !=', 0);

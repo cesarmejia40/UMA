@@ -45,6 +45,29 @@ class Canje extends CI_Controller
       
      echo json_encode($dataCls);
     }
+    
+/*para el estado de cuenta por cliente*/
+    public function cargamdpEdoCta($cod,$Desde,$Hasta)
+    {
+        echo $cod;
+        $dataCls = $this->canjes->mdpEdoCta($cod,$Desde,$Hasta);
+        $i=0;
+        $json= array();
+        foreach($dataCls as $key){
+            $json['data'][$i]['NFactura'] = $key['itmFact'];
+            $json['data'][$i]['FFactura'] = $key['itmDate'];
+            $json['data'][$i]['Puntos'] = $key['itmPts'];
+            $json['data'][$i]['PtsAplicados'] = $key['APLI'];
+            $json['data'][$i]['PtsDisponibles'] = $key['itmDisponible'];
+            $json['data'][$i]['Estado'] = $key['Estado'];
+            //$json['data'][$i]['PtsSinAplicar'] = "<label class='milabel' id='label_".$key['itmFact']."'>".$key['itmPts']."</label>";
+
+            $i++;
+        }
+        echo json_encode($json);
+
+    }
+
     public function cargarBouchers($cod)
     {
         $dataCls = $this->canjes->bouchers($cod);
@@ -55,7 +78,8 @@ class Canje extends CI_Controller
             $json['data'][$i]['Factura'] = $key['itmFact'];
             $json['data'][$i]['Puntos'] = $key['itmPts'];
             $json['data'][$i]['PtsAplicados'] = 0;
-           
+            $json['data'][$i]['PtsSinAplicar'] = "<label class='milabel' id='label_".$key['itmFact']."'>".$key['itmPts']."</label>";
+
             $i++;
         }
         echo json_encode($json);

@@ -115,6 +115,7 @@
                                 <td>N° BOCUHER</td>
                                 <td>PUNTOS</td>
                                 <td>PUNTOS APLICADOS</td>
+                                <td>PUNTOS DISPONIBLES</td>
                             </tr>
                             </thead>
                             <tbody>

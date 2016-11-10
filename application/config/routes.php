@@ -31,6 +31,9 @@ $route['viewFrp/(:any)'] = "canje/verFrp/$1";
 $route['cargarArt/(:any)']= "canje/cargarArticulos/$1";
 $route['cargarCls/(:any)']= "canje/cargarClientes/$1";
 $route['cargarBouch/(:any)']= "canje/cargarBouchers/$1";
+//
+$route['cargarEdoCta/(:any)/(:any)/(:any)']= "canje/cargamdpEdoCta/$1/$2/$3";
+
 $route['totalPtsCls/(:any)']= "canje/totalPtsCls/$1";
 $route['savefrp/(:any)/(:any)/(:any)']= "canje/frp/$1/$1/$1";
 $route['lineprod/(:any)/(:any)/(:any)/(:any)']= "canje/frplineasprod/$1/$1/$1/$1";
@@ -60,6 +63,8 @@ $route['clientesReport/(:any)/(:any)/(:any)'] = "reports/clientesReport/$1/$2/$3
 $route['pxcReport/(:any)/(:any)'] = "reports/pxcReport/$1/$2";
 $route['frpReport/(:any)/(:any)'] = "reports/frpReport/$1/$2";
 $route['mdpReport/(:any)/(:any)'] = "reports/mdpReport/$1/$2";
+$route['mdpReport/(:any)/(:any)'] = "reports/mdpReport/$1/$2";
+$route['mdpEdoCta']="reports/mdpEdoCta";
 
 
 /*reportes INGRID...*/

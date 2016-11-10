@@ -426,4 +426,14 @@ class Reports extends CI_Controller
         echo json_encode($json);
     }
 
+    /*Nuevo reporte de Estado de Cuenta por Cliente*/
+    public function mdpEdoCta()
+    {
+         $data['clientes'] = $this->reportes->S_Clientes();
+        $this->load->view('templates/header_home_admin');
+        //$this->load->view('admin/reportes_view',$data);
+        $this->load->view('admin/reporte_EdoCtaXCte',$data);
+        $this->load->view('templates/footer_admin');
+    }
+
 }

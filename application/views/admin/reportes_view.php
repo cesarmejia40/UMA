@@ -28,6 +28,7 @@
                                     <!--
                                     <a href="#!" id="mdpFactAnulada" class="collection-item green" style=" border-bottom: 5px solid #b9dcbb;">FACTURAS ANULADAS </a>-->
                                     <!--***************************************FIN REPORTES JUDITH!! ***************************************************-->
+                                    <a href="mdpEdoCta" id="mdpEdoCta" class="collection-item green" style=" border-bottom: 5px solid #b9dcbb;">EDO.CTA.X.CTE</a>
                                 </div>
                             </div>
                         </div>

@@ -6,7 +6,8 @@ $("#idtxtPts").numeric();
 $("#cant").numeric();
 /*************** END SOLO NUMERO EN EL CAMPO DE PUNTOS CATALOGO ************************/
 
-$(document).ready(function(){
+$(document).ready(function()
+{
     /******* ACTIVAR LINK DE NAVEGACIÓN MENU IZQUIERDA ********/
     var pathname = window.location.pathname;
     var url= pathname.split('index.php/');
@@ -201,6 +202,14 @@ $(document).ready(function(){
                     cliente = this.value;
                     cargarBouchers(cliente);
                 });
+
+
+                /*$('#clientessSelect').on('change',function(){
+                    cliente = this.value;
+                    cargamdpEdoCta(cliente);
+                });
+                */
+
             var ptsAplic=0;
             var faltanReal=0;
           
@@ -213,12 +222,15 @@ $(document).ready(function(){
                     var pntos = $('td', $(this)).eq(2).text();
                     var apl = $('td', $(this)).eq(3).text();
                     var disp = $('#disponibles').html();
+                    //alert(apl);
                     $('#disponibles').html(parseInt(disp) + parseInt(apl));
                     $('td', $(this)).eq(3).text(0);
                     ptsAplic = ptsAplic - parseInt(pntos);
                     $('#lineaPuntos').find('#aplicados').html(ptsAplic);
                     $('#lineaPuntos').find('#faltantes').html(parseInt($('#lineaPuntos').find('#faltantes').html()) + parseInt(apl));
                     $(this).removeClass('selected');
+                    $('#label_'+$('td', $(this)).eq(1).text()).text($('td', $(this)).eq(2).text());
+
                 }
                 else{
                     var id= this.id;
@@ -267,6 +279,8 @@ $(document).ready(function(){
                             // console.log(faltan);
                             var apl = $('td', $(this)).eq(3).text();
                             $('#disponibles').html(parseInt(disp) - parseInt(apl));
+                            $('#label_'+$('td', $(this)).eq(1).text()).text(pntos-apl);
+
                         }
                     }
                     ordenarPts($('#faltantes').html(), $('#aplicados').html(), $('#requeridos').html());
@@ -532,6 +546,59 @@ $(document).ready(function(){
                 break;
         }
     });
+    $('#genReportEdoCta').click(function()
+        {
+            var client = $("#cliente option:selected").val();
+            var f1= $('#date1').val();
+            var f2= $('#date2').val();
+            var table = $('#tableEdoCta').DataTable();
+            table.destroy();
+            table.clear();
+            table.draw();
+            //$('#disponibles').html('');
+            $('#tableEdoCta').DataTable
+            ( {
+                /* "dom": 'T<"clear">lfrtip',
+
+                 "tableTools": {
+                 "sSwfPath": "http://165.98.75.219:8448/UMA/assets/data/swf/copy_csv_xls_pdf.swf"
+                 },*/
+                "ajax": "cargarEdoCta/"+client+"/"+f1+"/"+f2,
+                "deferRender": true,
+                "ordering": false,
+                "info":     false,
+                "filter": false,
+                "pagingType": "full_numbers",
+                "lengthMenu": [6] ,
+                "language": {
+                    "emptyTable": "No hay datos disponibles en la tabla",
+                    "lengthMenu": '_MENU_ ',
+                    "search": '<i class="tiny material-icons">search</i>',
+                    "loadingRecords": "",
+                    "paginate": {
+                        "first":      "Primera",
+                        "last":       "Última ",
+                        "next":       "Siguiente",
+                        "previous":   "Anterior"
+                    }
+                },
+                "columns": [
+                    { "data": "NFactura" },
+                    { "data": "FFactura" },
+                    { "data": "Puntos" },
+                    { "data": "PtsAplicados" },
+                    { "data": "PtsDisponibles" },
+                    { "data": "Estado" }
+                ]
+            }
+            );
+            $.getJSON("totalPtsCls/"+cliente, function(data){
+                $('#disponibles').html(data[0]['Total']);
+            });
+
+        }
+    );
+
     $('#genReport').click(function(){
         $("#CmptxtD1,#CmptxtD2,#LoadDiv").hide("slow");
         var f1= $('#date1').val();
@@ -540,12 +607,18 @@ $(document).ready(function(){
         var client = $("#cliente option:selected").html();
         var res = client.split(" | ");   
         var client = res[0] || '';
-        if (f1=="") {
+        if (f1=="") 
+        {
             $("#CmptxtD1").show("slow");
-        } else{
-            if (f2=="") {
+        } 
+        else
+        {
+            if (f2=="") 
+            {
                 $("#CmptxtD2").show("slow");
-            } else{
+            } 
+            else
+            {
                 $("#LoadDiv").show("slow");
                 generarReporte(menuLink, f1, f2,client);
             };
@@ -635,6 +708,7 @@ function cargarClientPts(pts){
         }
     });
 }
+
 function cargarBouchers(cliente){
 
     var table = $('#tableBoucher').DataTable();
@@ -642,7 +716,8 @@ function cargarBouchers(cliente){
     table.clear();
     table.draw();
     $('#disponibles').html('');
-    $('#tableBoucher').DataTable( {
+    $('#tableBoucher').DataTable
+    ( {
         /* "dom": 'T<"clear">lfrtip',
 
          "tableTools": {
@@ -671,9 +746,11 @@ function cargarBouchers(cliente){
             { "data": "Fecha" },
             { "data": "Factura" },
             { "data": "Puntos" },
-            { "data": "PtsAplicados" }
+            { "data": "PtsAplicados" },
+            { "data": "PtsSinAplicar" }
         ]
-    });
+    }
+    );
     $.getJSON("totalPtsCls/"+cliente, function(data){
         $('#disponibles').html(data[0]['Total']);
     });

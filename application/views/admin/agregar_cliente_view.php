@@ -44,10 +44,32 @@
                                         <option value="0">Cliente</option>
                                         <option value="1">Administrador</option>
                                         <option value="2">Visor</option>
+                                        <option value="4" id="vendedor">Vendedor</option>
                                     </select>
                                 <label for="privilegio">ROL</label>
                                 <span class="form-help"><span class="ast">*</span>Seleccione el privelegio del usuario.</span>
                             </div>
+
+                            <!-- Drop Down vendedores -->
+                            <div class="input-field col s6 pull left" style="display: none;" id="Vendedor">
+                                <div class="error">
+                                </div>
+                                    <select id="Vend" name="vendedor" class="validate">
+                                        <option value="" disabled selected></option>
+                                        <option value="1" >vendedor1</option>
+                                        <option value="2">vendedor2</option>
+                                        <option value="3">vendedor3</option>
+                                        <option value="4">vendedor4</option>
+                                        <option value="5">vendedor5</option>
+                                        <option value="6">vendedor6</option>
+                                        <option value="7">vendedor7</option>
+                                        <option value="8">vendedor8</option>
+                                    </select>
+                                <label for="Vend">VENDEDORES</label>
+                                <span class="form-help"><span class="ast">*</span>Seleccione un vendedor.</span>
+                            </div>
+                         <!-- Drop Down vendedores -->
+                            <input type="hidden" name="nomvendedor" id="nomb">
                             <div class="input-field col m6">
                                 <p class="cbActivo">
                                     <input type="checkbox" id="activo" name="activo"  />

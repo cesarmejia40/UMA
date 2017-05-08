@@ -19,10 +19,11 @@ class Usuarios extends CI_Controller
         $this->load->view('admin/master_usuario_view', $data);
         $this->load->view('templates/footer_admin');
     }
-    public function agregar_cliente(){
-    //    $data['clientes'] = $this->clientes->usuarios();
+    public function agregar_cliente(){    
+        $data = $this->clientes->vendedores();
+        //print_r($data);
         $this->load->view('templates/header_home_admin');
-        $this->load->view('admin/agregar_cliente_view');
+        $this->load->view('admin/agregar_cliente_view',$data);
         $this->load->view('templates/footer_admin');
     }
     public function save_cliente(){
@@ -32,7 +33,10 @@ class Usuarios extends CI_Controller
        $this->form_validation->set_rules('privilegio', 'Rol', 'required');
         if ($this->form_validation->run())
         {
+            $slpId= $this->input->post('vendedor');
+
             $user= $this->input->post('user');
+            $slpcodname= $this->input->post('nomvendedor');
             $pass= $this->input->post('pass');
             $privilegio= $this->input->post('privilegio');
             if($this->input->post('activo') && $this->input->post('activo') != false){
@@ -41,11 +45,11 @@ class Usuarios extends CI_Controller
             else{
             $activo = 'N';
             }
-            $data= $this->clientes->save($user, $pass, $privilegio, $activo);
+            $data= $this->clientes->save($slpId, $user, $slpcodname, $pass, $privilegio, $activo);
                 if($data){
                     $this->index();
                 }
-                echo "Error";
+                //echo "Error";
 
             /*    $data= array(
                     'Usuario' => $user,

@@ -22,10 +22,12 @@ class Clientes extends CI_Model
         }
         return 0;
     }
-    public function save($user, $pass, $priv, $act){
+    public function save($slpId,$user, $slpcodname, $pass, $priv, $act){
         $data = array(
+            'SlpID' => $slpId ,
             'SlpName' => $user ,
-            'SlpPassword' => $pass ,
+            'SlpCodCliente' =>$slpcodname ,
+            'SlpPassword' => md5($pass) ,
             'Privilegio' =>  $priv,
             'Active' =>  $act,
             'Fecha_Creacion' => date('Y-m-d')
@@ -99,7 +101,20 @@ class Clientes extends CI_Model
         }
         $this->sqlsrv->close();
         echo json_encode($json);
+    }
+    public function vendedores()
+    {
+        $i=0;
+        $consulta = "SELECT VENDEDOR,NOMBRE FROM Softland.umaagro.VENDEDOR WHERE ACTIVO = 'S'";
+        $json = array();
+        $query = $this->sqlsrv->fetchArray($consulta,SQLSRV_FETCH_ASSOC);
 
-
+        foreach($query as $key){
+            $json['query'][$i]['ID'] = $key['VENDEDOR'];
+            $json['query'][$i]['NOMBRE'] = $key['NOMBRE'];
+            $i++;
+        }
+        return $json;
+        $this->sqlsrv->close();
     }
 }

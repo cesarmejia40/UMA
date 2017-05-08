@@ -99,7 +99,20 @@ class Clientes extends CI_Model
         }
         $this->sqlsrv->close();
         echo json_encode($json);
+    }
+    public function vendedores()
+    {
+        $i=0;
+        $consulta = "SELECT VENDEDOR,NOMBRE FROM Softland.umaagro.VENDEDOR WHERE ACTIVO = 'S'";
+        $json = array();
+        $query = $this->sqlsrv->fetchArray($consulta,SQLSRV_FETCH_ASSOC);
 
-
+        foreach($query as $key){
+            $json['query'][$i]['ID'] = $key['VENDEDOR'];
+            $json['query'][$i]['NOMBRE'] = $key['NOMBRE'];
+            $i++;
+        }
+        return $json;
+        $this->sqlsrv->close();
     }
 }

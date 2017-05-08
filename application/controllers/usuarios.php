@@ -19,19 +19,19 @@ class Usuarios extends CI_Controller
         $this->load->view('admin/master_usuario_view', $data);
         $this->load->view('templates/footer_admin');
     }
-    public function agregar_cliente(){
-    //    $data['clientes'] = $this->clientes->usuarios();
+    public function agregar_cliente(){    
+        $data = $this->clientes->vendedores();
+        //print_r($data);
         $this->load->view('templates/header_home_admin');
-        $this->load->view('admin/agregar_cliente_view');
+        $this->load->view('admin/agregar_cliente_view',$data);
         $this->load->view('templates/footer_admin');
     }
     public function save_cliente(){
 
-       $this->form_validation->set_rules('user', 'Usuario', 'required');
-       $this->form_validation->set_rules('pass', 'Contraseña', 'required');
-       $this->form_validation->set_rules('privilegio', 'Rol', 'required');
-        if ($this->form_validation->run())
-        {
+        $this->form_validation->set_rules('user', 'Usuario', 'required');
+        $this->form_validation->set_rules('pass', 'Contraseña', 'required');
+        $this->form_validation->set_rules('privilegio', 'Rol', 'required');
+        if ($this->form_validation->run()){
             $user= $this->input->post('user');
             $pass= $this->input->post('pass');
             $privilegio= $this->input->post('privilegio');

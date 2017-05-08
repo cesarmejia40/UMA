@@ -51,6 +51,7 @@ $(document).ready(function()
             }
         },
     });
+
     /************ENDTABLA MASTER DE CLIENTE**************/
 
     /************** BEGIN TABLA CANJE DE PUNTOS ***************/
@@ -458,21 +459,24 @@ $(document).ready(function()
          "tableTools": {
          "sSwfPath": "http://165.98.75.219:8448/UMA/assets/data/swf/copy_csv_xls_pdf.swf"
          },*/
+         "paging":   false,
         "ordering": false,
         "info":     false,
-        "pagingType": "full_numbers",
+        
+        /*"pagingType": "full_numbers",*/
         "lengthMenu":  [[1,-1], [1,"Todo"]] ,
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla",
             "lengthMenu": '_MENU_ ',
             "search": '<i class=" material-icons">search</i>',
             "loadingRecords": "",
-            "paginate": {
+            
+            /*"paginate": {
                 "first":      "Primera",
                 "last":       "Última ",
                 "next":       "Siguiente",
                 "previous":   "Anterior"
-            }
+            }*/
         },
     });
     /*************** END CATALOGO************************/
@@ -1178,3 +1182,4 @@ function hideShow(id){
 function Imprimir(){
     window.print();
 }
+

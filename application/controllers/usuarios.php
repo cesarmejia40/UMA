@@ -32,7 +32,9 @@ class Usuarios extends CI_Controller
        $this->form_validation->set_rules('privilegio', 'Rol', 'required');
         if ($this->form_validation->run())
         {
+            $slpId= $this->input->post('vendedor');
             $user= $this->input->post('user');
+            $slpcodname= $this->input->post('nomvendedor');
             $pass= $this->input->post('pass');
             $privilegio= $this->input->post('privilegio');
             if($this->input->post('activo') && $this->input->post('activo') != false){
@@ -41,11 +43,11 @@ class Usuarios extends CI_Controller
             else{
             $activo = 'N';
             }
-            $data= $this->clientes->save($user, $pass, $privilegio, $activo);
+            $data= $this->clientes->save($slpId, $user, $slpcodname, $pass, $privilegio, $activo);
                 if($data){
                     $this->index();
                 }
-                echo "Error";
+                //echo "Error";
 
             /*    $data= array(
                     'Usuario' => $user,

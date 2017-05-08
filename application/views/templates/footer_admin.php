@@ -45,7 +45,18 @@
         clear: 'Borrar',
         close: 'Cerrar'
     });
-</script>
+    $("#privilegio").change(function(){
+        
+        if ($(this).val()=="4") {            
+            $("#Vendedor").show();
+        }else{
+            $("#Vendedor").hide();
+         }
+    });
 
+    $("#Vendedor").change(function(){
+        document.getElementById("nomb").value = $("#Vendedor option:selected").text();
+    });
+</script>
 </body>
 </html>

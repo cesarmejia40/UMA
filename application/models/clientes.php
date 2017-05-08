@@ -22,10 +22,12 @@ class Clientes extends CI_Model
         }
         return 0;
     }
-    public function save($user, $pass, $priv, $act){
+    public function save($slpId,$user, $slpcodname, $pass, $priv, $act){
         $data = array(
+            'SlpID' => $slpId ,
             'SlpName' => $user ,
-            'SlpPassword' => $pass ,
+            'SlpCodCliente' =>$slpcodname ,
+            'SlpPassword' => md5($pass) ,
             'Privilegio' =>  $priv,
             'Active' =>  $act,
             'Fecha_Creacion' => date('Y-m-d')

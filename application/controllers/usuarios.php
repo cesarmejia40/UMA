@@ -19,10 +19,11 @@ class Usuarios extends CI_Controller
         $this->load->view('admin/master_usuario_view', $data);
         $this->load->view('templates/footer_admin');
     }
-    public function agregar_cliente(){
-    //    $data['clientes'] = $this->clientes->usuarios();
+    public function agregar_cliente(){    
+        $data = $this->clientes->vendedores();
+        //print_r($data);
         $this->load->view('templates/header_home_admin');
-        $this->load->view('admin/agregar_cliente_view');
+        $this->load->view('admin/agregar_cliente_view',$data);
         $this->load->view('templates/footer_admin');
     }
     public function save_cliente(){
@@ -33,6 +34,7 @@ class Usuarios extends CI_Controller
         if ($this->form_validation->run())
         {
             $slpId= $this->input->post('vendedor');
+
             $user= $this->input->post('user');
             $slpcodname= $this->input->post('nomvendedor');
             $pass= $this->input->post('pass');

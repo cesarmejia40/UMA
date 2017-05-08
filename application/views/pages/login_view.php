@@ -52,6 +52,9 @@
 						</p>
 					</div>
 					<?= form_close(); ?>
+								<tr>
+				<td colspan="2"><input type="checkbox" name="recordar"> Recordar contrase&ntilde;a</td>
+			</tr>
 				</div>
 			</div>
 		</div>

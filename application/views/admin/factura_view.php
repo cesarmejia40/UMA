@@ -13,7 +13,9 @@
                             <td>FACTURA</td>
                             <td>PTS</td>
                             <td>FECHA</td>
+                               <?php if ($this->session->userdata("Acceso") == 1 || $this->session->userdata("Acceso") == 2){ ?>
                             <td></td>
+                            <?php }?>
                         </tr>
                      </thead>
                      <tbody>                         
@@ -27,10 +29,12 @@
                                 </td> 
                                 <td><?php echo $Facts->itmPts ?></td>                                     
                                 <td><?php echo $Facts->itmDate ?></td>                                     
-                                 <td>
-                                    <a class="btn-floating red modal-trigger" href="#modal1" onclick="AnularFull('<?php echo $Facts->itmFact ?>')"><i class="material-icons">close</i></a>
+                                 
+                                     <?php if ($this->session->userdata("Acceso") == 1 || $this->session->userdata("Acceso") == 2){ ?>
+                                      <td><a class="btn-floating red modal-trigger" href="#modal1" onclick="AnularFull('<?php echo $Facts->itmFact ?>')"><i class="material-icons">close</i></a></td>
+                                    <?php }?>
                                     <!--<a class="btn-floating red"><i class="material-icons">close</i></a>-->
-                                </td>
+                                
                             </tr>                               
                         <?php }}?>
                      </tbody>

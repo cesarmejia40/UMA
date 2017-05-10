@@ -44,7 +44,15 @@ class Login extends CI_Controller {
 						$data['Clientes'] = $this->itm1->MtPts();
 						$this->load->view('admin/master_view', $data);
 						$this->load->view('templates/footer_admin');
-					} else {
+					} 
+						elseif(($row['Privilegio'] == 4))
+						{
+						$this->load->view('templates/header_home_admin');
+						$data['Clientes'] = $this->itm1->MtPts();
+						$this->load->view('admin/master_view', $data);
+						$this->load->view('templates/footer_admin');
+						}
+						else {
 						$this->load->view('templates/header_home');
 
 						$Top['listatop'] = $this->itm1->TOP($this->session->userdata('idCliente'));

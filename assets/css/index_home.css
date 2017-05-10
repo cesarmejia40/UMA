@@ -93,6 +93,59 @@ nav{
 }
 /****** END style MENU LEFT ****/
 
+
+/****** stylos para la vista de catalogo *******/
+.div-max-1 {
+    margin: 0 auto;
+    width:90%;
+    max-height: auto;
+    padding: 10px 10px;
+    background-color: #b9dcbb;
+}
+
+.div-max-2 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px 20px;
+}
+
+.div-max-3 {
+    padding: 10px 10px;
+    text-align:center;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.collection-2 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 10px;"
+}
+
+.div-cont-1 {
+    overflow:hidden;
+    text-align: center;
+    margin:auto;
+    width: 100%;    
+}
+
+.div-cont-2 {
+    display: inline-table;
+    border:2px solid #696969;
+    padding:10px;
+    height:100px;
+    width:32%;
+    margin:2px;
+   
+}
+
+.botton-view-2 {
+    background-color:#b22222;
+    color: white;
+    font-size: 30px;
+    border-radius: 50px;
+}
+
 /******style Vista del contenido principal ****/
 #ContenidoCentral{
     position: relative;

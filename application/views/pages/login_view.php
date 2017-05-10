@@ -38,11 +38,18 @@
 	                    		<span class="ast"></span>
 	                    		<p>Nombre o Contraseña equivocada.</p>
 	                		</span>';
-						}
-						
+						}						
 						?>
-						
-						<!--	<p>
+						<tr>
+							<td colspan="2">
+								<p style="text-align: center;">
+				      				<input type="checkbox" id="checkRemember" name="checkRemember" />
+				      				<label for="checkRemember">Recordar contrase&ntilde;a</label>
+			    				</p>
+							</td>
+
+						</tr>						
+						<!--<p>
                                 <input type="checkbox" id="checkRec" />
                                 <label for="checkRec">RECORDAR</label>
                             </p>
@@ -52,9 +59,7 @@
 						</p>
 					</div>
 					<?= form_close(); ?>
-								<tr>
-				<td colspan="2"><input type="checkbox" name="recordar"> Recordar contrase&ntilde;a</td>
-			</tr>
+
 				</div>
 			</div>
 		</div>

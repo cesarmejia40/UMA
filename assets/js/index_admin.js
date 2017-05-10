@@ -459,10 +459,11 @@ $(document).ready(function()
          "tableTools": {
          "sSwfPath": "http://165.98.75.219:8448/UMA/assets/data/swf/copy_csv_xls_pdf.swf"
          },*/
-         "paging":   false,
+        "paging":   false,
         "ordering": false,
-        "info":     false,
-        
+        "bFilter": false,
+        "bInfo": false,
+        "bPaginate": false,
         /*"pagingType": "full_numbers",*/
         "lengthMenu":  [[1,-1], [1,"Todo"]] ,
         "language": {

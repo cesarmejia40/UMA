@@ -5,6 +5,7 @@ class Login extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->library('session');
 	}
 
 	public function index($e = 1)
@@ -18,7 +19,14 @@ class Login extends CI_Controller {
 
 		$this->form_validation->set_rules('name', 'Usuario', 'required');
 		$this->form_validation->set_rules('pass', 'Contraseña', 'required');
-
+		
+		//Recordar contraseña. Metodos
+		$valorCheck = $this->input->post("checkRemember");
+		if ($valorCheck == "on" && $valorCheck != "") {
+			echo "Se marco el chekc";
+		} else if ($valorCheck != "on" || $valorCheck == "") {
+			echo "No se marco el chekc";
+		} 
 		if ($this->form_validation->run()) {
 			$name = $this->input->get_post('name');
 			$pass = $this->input->get_post('pass');
@@ -27,6 +35,7 @@ class Login extends CI_Controller {
 			if ($data['user'] == 0) {
 				$this->index($data['user']);				
 			} else {
+				
 				foreach ($data['user'] as $row) {
 					$sessiondata = array(
 							'username' => $row['SlpName'],
@@ -84,6 +93,5 @@ class Login extends CI_Controller {
 
 	}
 }
-
 /* End of file login.php */
 /* Location: ./application/controllers/login.php */

@@ -64,7 +64,7 @@
                     <div class="col m12 tituloC" align="right"  >
                         <input type="submit" class="btn green darken-3" value="Guardar" />
                     </div>
-                    </div>
+                </div>
             </div>
             </div>
         </div>
@@ -73,34 +73,34 @@
     </div>
 
 <div class="row">
-    <div class="" style="margin: 0 auto; width:90%; padding: 10px 0px 30px 5px; background-color: #b9dcbb;">
-        <div class="" style="width: 100%; margin: 0 auto; padding: 5px 20px; box-sizing: border-box;">
-            <div style="padding: 10px 10px; text-align:center; width: 80%; margin: 0 auto;" >
+    <div class="div-max-1">
+        <div class="div-max-2">
+            <div class="div-max-3">
                 <b>ARTICULOS INGRESADOS</b><br>                                        
             </div>
-            <div class="collection" style="border: 1px solid #b9dcbb; width: 90%; margin: 0 auto;">
-            <div class="" style="width: 100%; margin: 0 auto; padding: 20px 5px; background-color:#b9dcbb; display: inline-block;">
-                <div>
-                <table id="tableCatalogo" class="table" cellspacing="0" cellpadding="0" style="width:50%; background-color: blue; float: left;" >
-                <thead>
-                    <tr>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
+            <div class="collection collection-2">
+            <div class="div-cont-1">
+                <div class="div-cont-2">
+                <table border="1" id="table-view-cat-1">
+                    <thead>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
                 <?php
                 if (!($mtct)) {                                                                
                 } else {
                 foreach ($mtct-> result() as $Cls ) { ?>                                                    
                 <tr class="border_bottom">
                     <td>
-                        <div style="text-align: left;width: 450px;margin: auto;"  >
-                            <div align="right"><a href="catalogo/EliminarProduct/<?php echo  $Cls->tctId?>" ><i class="Small material-icons ">close</i></a></div>
-                                <div style="width: 90px;float:left; border: 0px solid #b9dcbb;">
+                        <div>
+                            <div align="right"><a href="catalogo/EliminarProduct/<?php echo  $Cls->tctId?>" ><i class="Small material-icons botton-view-2">close</i></a></div>
+                                <div>
                                     <a href="catalogo/EditarProduct/<?php echo  $Cls->tctId?>" >
-                                    <img src="<?php echo base_url().'./uploads/'.$Cls->tctUrlimg.'';?>" width="140" height="140"></a>
+                                    <img src="<?php echo base_url().'./uploads/'.$Cls->tctUrlimg.'';?>" width="150" height="150"></a>
                                 </div>
-                                <div style="margin-left:150px;border: 0px solid #b9dcbb;">
+                                <div>
                                     <span class="TituloProduc"><?php echo $Cls->tctNombreProd?></span>
                                     <br>
                                        COD. PRODC: <?php echo $Cls->tctCodigo?>
@@ -111,30 +111,30 @@
                         </td>                                                                    
                         </tr>
                 <?php }}?>
-                </tbody>
+                    </tbody>
                 </table>
                 </div>
-                <div>
-                <table id="tableCatalogo" class="table" cellspacing="0" cellpadding="0" style="width:50%; background-color: blue; float: left;" >
-                <thead>
-                    <tr>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
+                <div class="div-cont-2">
+                <table border="1" id="table-view-cat-2">
+                    <thead>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
                 <?php
                 if (!($mtct)) {                                                                
                 } else {
                 foreach ($mtct-> result() as $Cls ) { ?>                                                    
                 <tr class="border_bottom">
                     <td>
-                        <div style="text-align: left;width: 450px;margin: auto;"  >
-                            <div align="right"><a href="catalogo/EliminarProduct/<?php echo  $Cls->tctId?>" ><i class="Small material-icons ">close</i></a></div>
-                                <div style="width: 90px;float:left; border: 0px solid #b9dcbb;">
+                        <div>
+                            <div align="right"><a href="catalogo/EliminarProduct/<?php echo  $Cls->tctId?>" ><i class="Small material-icons botton-view-2">close</i></a></div>
+                                <div>
                                     <a href="catalogo/EditarProduct/<?php echo  $Cls->tctId?>" >
-                                    <img src="<?php echo base_url().'./uploads/'.$Cls->tctUrlimg.'';?>" width="140" height="140"></a>
+                                    <img src="<?php echo base_url().'./uploads/'.$Cls->tctUrlimg.'';?>" width="150" height="150"></a>
                                 </div>
-                                <div style="margin-left:150px;border: 0px solid #b9dcbb;">
+                                <div>
                                     <span class="TituloProduc"><?php echo $Cls->tctNombreProd?></span>
                                     <br>
                                        COD. PRODC: <?php echo $Cls->tctCodigo?>
@@ -145,18 +145,50 @@
                         </td>                                                                    
                         </tr>
                 <?php }}?>
-                </tbody>
+                    </tbody>
+                </table>
+                </div>
+                <div class="div-cont-2">
+                <table border="1" id="table-view-cat-3">
+                    <thead>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                <?php
+                if (!($mtct)) {                                                                
+                } else {
+                foreach ($mtct-> result() as $Cls ) { ?>                                                    
+                <tr class="border_bottom">
+                    <td>
+                        <div>
+                            <div align="right"><a href="catalogo/EliminarProduct/<?php echo  $Cls->tctId?>" ><i class="Small material-icons botton-view-2">close</i></a></div>
+                                <div>
+                                    <a href="catalogo/EditarProduct/<?php echo  $Cls->tctId?>" >
+                                    <img src="<?php echo base_url().'./uploads/'.$Cls->tctUrlimg.'';?>" width="150" height="150"></a>
+                                </div>
+                                <div>
+                                    <span class="TituloProduc"><?php echo $Cls->tctNombreProd?></span>
+                                    <br>
+                                       COD. PRODC: <?php echo $Cls->tctCodigo?>
+                                    <br>
+                                    <span class="TituloPts"><?php echo $Cls->tctPuntos?> Pts.</span>                                                                 
+                                </div>
+                        </div>
+                        </td>                                                                    
+                        </tr>
+                <?php }}?>
+                    </tbody>
                 </table>
                 </div>
             </div>
-            </div>
-        </div>
 
         </div>
     </div>
 
-</div>
-</div>
+    </div>
+    </div>
 </div>
 </div>
 </div>

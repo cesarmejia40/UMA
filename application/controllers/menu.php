@@ -66,12 +66,11 @@ class Menu extends CI_Controller
         $this->load->view('templates/footer');
     }
     public function pagos(){
-        $idClientee = 'MT003';
-        $this->load->view('templates/header_home');
-        //$Top['listatop'] = $this->itm1->TOP($this->session->userdata('idCliente'));
-        //$Top['listindica'] = $this->itm1->indicadores($this->session->userdata('idCliente'));
-        $Top['listatop'] = $this->itm1->TOP($idClientee);
-        $Top['listindica'] = $this->itm1->indicadores($idClientee);
+        $this->load->view('templates/header_home');        
+        //$Top['listatop'] = $this->itm1->TOP($idClientee);
+        //$Top['listindica'] = $this->itm1->indicadores($idClientee);
+        $Top['listatop'] = $this->itm1->TOP($this->session->userdata('idCliente'));
+        $Top['listindica'] = $this->itm1->indicadores($this->session->userdata('idCliente'));
         
         $this->load->view('pages/menu_view',$Top);
         $this->load->view('pages/pagos_view');

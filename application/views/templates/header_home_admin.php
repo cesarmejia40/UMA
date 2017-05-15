@@ -63,7 +63,13 @@ if($this->session->userdata('logged') == FALSE)
                              <div class="col m2"><a href="'.base_url('index.php/catalogo').'" id="catalogo" class="collection-item activo">CATÁLAGO</a></div>
                         ';
 
-                    break;                    
+                    break; 
+                    case '4':
+                    echo '
+                             <div class="col m2"><a href="'.base_url('index.php/master').'" id="master" class="collection-item activo">MASTER</a></div>                                                  
+                             <div class="col m2"><a href="'.base_url('index.php/catalogo').'" id="catalogo" class="collection-item activo">CATÁLAGO</a></div>    
+                    ';
+                    break;
                     default:
                         echo '
                              <div class="col m2"><a href="'.base_url('index.php/master').'" id="master" class="collection-item activo">MASTER</a></div>

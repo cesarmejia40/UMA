@@ -17,19 +17,25 @@
                                     <td>CLIENTE</td>                                    
                                     <td>PTS</td>
                                     <td></td>
-                                    <td></td>
+                                      <?php if ($this->session->userdata("Acceso") == 1 || $this->session->userdata("Acceso") == 2){ ?>
+                                        <td></td>
+                                     <?php }?>
                                 </tr>
                              </thead>
                              <tbody>
                              <?php foreach ($Clientes-> result() as $Cls) { ?>
+                        
                                  <tr>
                                      <td><?php echo $Cls->itmCls ?></td>
                                      <td><?php echo $Cls->itmClsName ?></td>                                     
                                      <td><?php echo number_format($Cls->itmPts) ?></td>
                                      <td><a href="oitm/facturas/<?php echo base64_encode($Cls->itmCls) ?>">VER</a></td>
+                                     <?php if ($this->session->userdata("Acceso") == 1 || $this->session->userdata("Acceso") == 2){ ?>
                                      <td> <a class="btn-floating red" href="#" onclick="AnularTotal('<?php echo $Cls->itmCls ?>')"><i class="tiny material-icons">close</i></a></td>
+                                     <?php }?>
+
                                  </tr>
-                                                         
+                                                 
                              <?php }?>
                              
                              </tbody>

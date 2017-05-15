@@ -4,6 +4,7 @@
 /*************** SOLO NUMERO EN EL CAMPO DE PUNTOS CATALOGO ************************/
 $("#idtxtPts").numeric();
 $("#cant").numeric();
+
 /*************** END SOLO NUMERO EN EL CAMPO DE PUNTOS CATALOGO ************************/
 
 $(document).ready(function()

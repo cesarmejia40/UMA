@@ -34,14 +34,24 @@ class Catalogos  extends CI_Model{
             }
         }
     }
-    function mtct(){
-        $query=$this->db->get('mtct');
+    function mtct(){        
+        $query = $this->db->get('mtct');
         if ($query->num_rows()>0) {
             return $query;
         } else {
             return false;
         }
     }
+
+    function mtct1($val1, $val2){        
+        $query = $this->db->get('mtct',$val1, $val2);
+        if ($query->num_rows()>0) {
+            return $query;
+        } else {
+            return false;
+        }
+    }
+
     function GetProducto($id){
         $this->db->where('tctId',$id);
         $query=$this->db->get('mtct');

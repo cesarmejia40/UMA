@@ -9,9 +9,22 @@ class Catalogo extends CI_Controller{
         parent::__construct();
     }
     public function index(){
-        $this->load->view('templates/header_home_admin');
+        $this->load->view('templates/header_home_admin');        
         $data['mtct'] = $this->catalogos->mtct();
+        $cont = 0;
+
+        foreach ($data['mtct']->result_array() as $key) {
+            $cont = $cont+1;
+        }      
+        $val1 = round($cont/4);         
+        
+        $data['mtct1'] = $this->catalogos->mtct1($val1, 0);
+        $data['mtct2'] = $this->catalogos->mtct1($val1, $val1);
+        $data['mtct3'] = $this->catalogos->mtct1($val1, $val1*2);
+        $data['mtct4'] = $this->catalogos->mtct1($cont, $val1*3);       
+        
         $this->load->view('admin/catalogo_view',$data);
+
         $this->load->view('templates/footer_admin');
     }
     public function saveproduct(){

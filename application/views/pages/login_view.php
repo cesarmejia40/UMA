@@ -44,7 +44,7 @@
 							<td colspan="2">
 								<p style="text-align: center;">
 				      				<input type="checkbox" id="checkRemember" name="checkRemember" />
-				      				<label for="checkRemember">Recordar contrase&ntilde;a</label>
+				      				<label for="checkRemember">RECORDAR</label>
 			    				</p>
 							</td>
 

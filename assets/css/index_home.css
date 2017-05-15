@@ -134,7 +134,7 @@ nav{
     border:2px solid #696969;
     padding:10px;
     height:100px;
-    width:32%;
+    width:24%;
     margin:2px;
    
 }
@@ -144,6 +144,14 @@ nav{
     color: white;
     font-size: 30px;
     border-radius: 50px;
+}
+
+.img-cat {
+    width: 110px;
+    height: 110px;
+    background-color: #fff8dc;
+    border-radius: 55px;
+    border: solid 2px #c0c0c0;
 }
 
 /******style Vista del contenido principal ****/

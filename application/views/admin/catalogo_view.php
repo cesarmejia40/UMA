@@ -89,18 +89,18 @@
                     </thead>
                     <tbody>
                 <?php
-                if (!($mtct)) {                                                                
+                if (!($mtct1)) {                                                                
                 } else {
-                foreach ($mtct-> result() as $Cls ) { ?>                                                    
+                foreach ($mtct1-> result() as $Cls ) { ?>                                                    
                 <tr class="border_bottom">
                     <td>
                         <div>
-                            <div align="right"><a href="catalogo/EliminarProduct/<?php echo  $Cls->tctId?>" ><i class="Small material-icons botton-view-2">close</i></a></div>
-                                <div>
+                            <div align="right"><a href="catalogo/EliminarProduct/<?php echo  $Cls->tctId?>" ><i class="material-icons botton-view-2">close</i></a></div>
+                                <div style="text-align:center; WIDTH:100%; HEIGHT:100px;">
                                     <a href="catalogo/EditarProduct/<?php echo  $Cls->tctId?>" >
-                                    <img src="<?php echo base_url().'./uploads/'.$Cls->tctUrlimg.'';?>" width="150" height="150"></a>
+                                    <img src="<?php echo base_url().'./uploads/'.$Cls->tctUrlimg.'';?>" class="img-cat"></a>
                                 </div>
-                                <div>
+                                <div style="WIDTH:100%; HEIGHT:80px; font-size:12px; padding: 10px 10px;">
                                     <span class="TituloProduc"><?php echo $Cls->tctNombreProd?></span>
                                     <br>
                                        COD. PRODC: <?php echo $Cls->tctCodigo?>
@@ -115,7 +115,7 @@
                 </table>
                 </div>
                 <div class="div-cont-2">
-                <table border="1" id="table-view-cat-2">
+                <table id="table-view-cat-2" >
                     <thead>
                         <tr>
                             <td></td>
@@ -123,18 +123,18 @@
                     </thead>
                     <tbody>
                 <?php
-                if (!($mtct)) {                                                                
+                if (!($mtct2)) {                                                                
                 } else {
-                foreach ($mtct-> result() as $Cls ) { ?>                                                    
+                foreach ($mtct2->result() as $Cls) { ?>                                                    
                 <tr class="border_bottom">
                     <td>
                         <div>
-                            <div align="right"><a href="catalogo/EliminarProduct/<?php echo  $Cls->tctId?>" ><i class="Small material-icons botton-view-2">close</i></a></div>
-                                <div>
+                            <div align="right"><a href="catalogo/EliminarProduct/<?php echo  $Cls->tctId?>" ><i class="material-icons botton-view-2">close</i></a></div>
+                                <div style="text-align:center; WIDTH:100%; HEIGHT:100px;">
                                     <a href="catalogo/EditarProduct/<?php echo  $Cls->tctId?>" >
-                                    <img src="<?php echo base_url().'./uploads/'.$Cls->tctUrlimg.'';?>" width="150" height="150"></a>
+                                    <img src="<?php echo base_url().'./uploads/'.$Cls->tctUrlimg.'';?>" class="img-cat"></a>
                                 </div>
-                                <div>
+                                <div style="WIDTH:100%; HEIGHT:80px; font-size:12px; padding: 10px 10px;">
                                     <span class="TituloProduc"><?php echo $Cls->tctNombreProd?></span>
                                     <br>
                                        COD. PRODC: <?php echo $Cls->tctCodigo?>
@@ -149,7 +149,7 @@
                 </table>
                 </div>
                 <div class="div-cont-2">
-                <table border="1" id="table-view-cat-3">
+                <table border="1" id="table-view-cat-3" >
                     <thead>
                         <tr>
                             <td></td>
@@ -157,18 +157,52 @@
                     </thead>
                     <tbody>
                 <?php
-                if (!($mtct)) {                                                                
+                if (!($mtct3)) {                                                                
                 } else {
-                foreach ($mtct-> result() as $Cls ) { ?>                                                    
+                foreach ($mtct3-> result() as $Cls ) { ?>                                                    
                 <tr class="border_bottom">
                     <td>
                         <div>
-                            <div align="right"><a href="catalogo/EliminarProduct/<?php echo  $Cls->tctId?>" ><i class="Small material-icons botton-view-2">close</i></a></div>
-                                <div>
+                            <div align="right"><a href="catalogo/EliminarProduct/<?php echo  $Cls->tctId?>" ><i class="material-icons botton-view-2">close</i></a></div>
+                                <div style="text-align:center; WIDTH:100%; HEIGHT:100px;">
                                     <a href="catalogo/EditarProduct/<?php echo  $Cls->tctId?>" >
-                                    <img src="<?php echo base_url().'./uploads/'.$Cls->tctUrlimg.'';?>" width="150" height="150"></a>
+                                    <img src="<?php echo base_url().'./uploads/'.$Cls->tctUrlimg.'';?>" class="img-cat"></a>
                                 </div>
-                                <div>
+                                <div style="WIDTH:100%; HEIGHT:80px; font-size:12px; padding: 10px 10px;">
+                                    <span class="TituloProduc"><?php echo $Cls->tctNombreProd?></span>
+                                    <br>
+                                       COD. PRODC: <?php echo $Cls->tctCodigo?>
+                                    <br>
+                                    <span class="TituloPts"><?php echo $Cls->tctPuntos?> Pts.</span>                                                                 
+                                </div>
+                        </div>
+                        </td>                                                                    
+                        </tr>
+                <?php }}?>
+                    </tbody>
+                </table>
+                </div>
+                <div class="div-cont-2">
+                <table border="1" id="table-view-cat-3" >
+                    <thead>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                <?php
+                if (!($mtct4)) {                                                                
+                } else {
+                foreach ($mtct4-> result() as $Cls ) { ?>                                                    
+                <tr class="border_bottom">
+                    <td>
+                        <div>
+                            <div align="right"><a href="catalogo/EliminarProduct/<?php echo  $Cls->tctId?>" ><i class="material-icons botton-view-2">close</i></a></div>
+                                 <div style="text-align:center; WIDTH:100%; HEIGHT:100px; padding: 10px 10px">
+                                    <a href="catalogo/EditarProduct/<?php echo  $Cls->tctId?>" >
+                                    <img src="<?php echo base_url().'./uploads/'.$Cls->tctUrlimg.'';?>" class="img-cat"></a>
+                                </div>
+                                <div style="WIDTH:100%; HEIGHT:80px; font-size:12px; padding: 20px 20px;">
                                     <span class="TituloProduc"><?php echo $Cls->tctNombreProd?></span>
                                     <br>
                                        COD. PRODC: <?php echo $Cls->tctCodigo?>

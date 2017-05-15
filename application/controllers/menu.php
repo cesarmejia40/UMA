@@ -36,16 +36,23 @@ class Menu extends CI_Controller
 
        $this->clientes->StatusFact($this->session->userdata('idCliente'),$this->input->get_post('D1'),$this->input->get_post('D2'));
     }
+
      public function ultimospagos(){        
-          $Strg="";
-        $Top['listatop'] = $this->itm1->TODASLASFACTURAS($this->session->userdata('idCliente'));        
-        foreach ($Top['listatop']->result() as $row){
-            $Strg .= "'".$row->itmFact."',"; 
-        }
-        $Strg = substr($Strg, 0,-1);        
-        $this->clientes->lastPagos($Strg);
+        $Strg=""; $cant=0;        
+        $Top['listatop'] = $this->itm1->TODASLASFACTURAS($this->session->userdata('idCliente'));
+        $cant = count($Top['listatop']);
         
+        if ($cant==0 || $cant == NULL) {
+            $this->clientes->registroVacio();
+        } else {
+            foreach ($Top['listatop'] as $row){
+                $Strg .= "'".$row['itmFact']."',";                
+            }
+            $Strg = substr($Strg, 0,-1);               
+            $this->clientes->lastPagos($Strg);   
+        }
     }
+
     public function bouchers(){
         $this->load->view('templates/header_home');
         $Top['listatop'] = $this->itm1->TOP($this->session->userdata('idCliente'));
@@ -59,14 +66,19 @@ class Menu extends CI_Controller
         $this->load->view('templates/footer');
     }
     public function pagos(){
+        $idClientee = 'MT003';
         $this->load->view('templates/header_home');
-        $Top['listatop'] = $this->itm1->TOP($this->session->userdata('idCliente'));
-        $Top['listindica'] = $this->itm1->indicadores($this->session->userdata('idCliente'));
+        //$Top['listatop'] = $this->itm1->TOP($this->session->userdata('idCliente'));
+        //$Top['listindica'] = $this->itm1->indicadores($this->session->userdata('idCliente'));
+        $Top['listatop'] = $this->itm1->TOP($idClientee);
+        $Top['listindica'] = $this->itm1->indicadores($idClientee);
+        
         $this->load->view('pages/menu_view',$Top);
         $this->load->view('pages/pagos_view');
         $data['cat'] = $this->catalogos->AllClPro();        
         $this->load->view('pages/catalogo_view', $data);
         $this->load->view('templates/footer');
+
     }
     public function factura(){
         $this->load->view('templates/header_home');

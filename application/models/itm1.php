@@ -96,26 +96,26 @@ class itm1 extends CI_Model{
 	}
 	function TOP($id){
 
-		$this->db->limit(5);
-		$this->db->order_by("itmPts", "desc");
-		$this->db->where('itmCls',$id);
-		
-		$query=$this->db->get('view_admin_mtpts');
-		
-		if ($query->num_rows()>0) {
-			return $query;
-		} else {
-			return false;
-		}
+	$this->db->limit(5);
+	$this->db->order_by("itmPts", "desc");
+	$this->db->where('itmCls',$id);
+
+	$query=$this->db->get('view_admin_mtpts');
+
+	if ($query->num_rows()>0) {
+	return $query;
+	} else {
+	return false;
+	}
 	}
 	function TODASLASFACTURAS($id){		
 		$this->db->order_by("itmPts", "desc");
 		$this->db->where('itmCls',$id);		
 		$query=$this->db->get('view_admin_mtpts');		
 		if ($query->num_rows()>0) {
-			return $query;
+			return  $query->result_array();
 		} else {
-			return '';
+			return NULL;
 		}
 	}
 

@@ -76,11 +76,12 @@ class Clientes extends CI_Model
     }
     public function lastPagos($IDs){
         $Array = $this->sqlsrv -> fetchArray("SELECT * FROM dbo.WEB_DOCUMENTOS_CC_UMG WHERE DOCUMENTO in (".$IDs.") ",SQLSRV_FETCH_ASSOC);
-        $json = array();
-         
-
+        $json = array();     
         $i=0;
-        foreach ($Array as $fila) {
+        $cant = count($Array);
+        
+        if ( $cant>0) {
+            foreach ($Array as $fila) {
             $json['data'][$i]['DOCUMENTO'] = $fila['DOCUMENTO'];            
             $json['data'][$i]['FECHA_DOCUMENTO'] = $fila['FECHA_DOCUMENTO'];
             $json['data'][$i]['MONTO'] ='C$ '.number_format($fila['MONTO'],2);
@@ -96,11 +97,32 @@ class Clientes extends CI_Model
                }
                elseif ($fila['ESTADO']=="PENDIENTE"){
                    $json['data'][$i]['DiasVencidos'] =$fila['DiasVencidos'];
-               }
+               } 
              $i++;
+            }
+           } else {
+            $json['data'][$i]['DOCUMENTO'] = 'NO HAY DATOS QUE MOSTRAR';            
+            $json['data'][$i]['FECHA_DOCUMENTO'] = '';
+            $json['data'][$i]['MONTO'] = '';
+            $json['data'][$i]['SALDO'] = 0;
+            $json['data'][$i]['ESTADO'] = '';
+            $json['data'][$i]['FECHA_VENCE'] = '';
+            $json['data'][$i]['DiasVencidos'] = '';
         }
-        $this->sqlsrv->close();
-        echo json_encode($json);
+            $this->sqlsrv->close();        
+            echo json_encode($json); 
+    }
+
+    public function registroVacio() {
+            $json = array();
+            $json['data'][0]['DOCUMENTO'] = "-";
+            $json['data'][0]['FECHA_DOCUMENTO'] = "-";
+            $json['data'][0]['MONTO'] = "-";
+            $json['data'][0]['SALDO'] = "-";
+            $json['data'][0]['ESTADO'] = "-";
+            $json['data'][0]['FECHA_VENCE'] = "-";
+            $json['data'][0]['DiasVencidos'] = "-";
+            echo json_encode($json); 
     }
     public function vendedores()
     {

@@ -58,7 +58,7 @@
         document.getElementById("nomb").value = $("#Vendedor option:selected").text();
     });
 
-    //////////////////////////////////////////////////////////////
+    ///////////////////////////VISTA CATALOGO///////////////////////////////////
 var table1 = $('#table-view-cat-1,#table-view-cat-2,#table-view-cat-3,#table-view-cat-4').DataTable(
     {
     ordering:  false,
@@ -66,7 +66,7 @@ var table1 = $('#table-view-cat-1,#table-view-cat-2,#table-view-cat-3,#table-vie
             "bPaginate": false,
             "paging": false,
             "lengthMenu": [[5,10,50,100,-1], [5,10,50,100,"Todo"]],
-            "language": {
+        "language": {
                 "paginate": {
                     "first":      "Primera",
                     "last":       "Última ",
@@ -74,6 +74,8 @@ var table1 = $('#table-view-cat-1,#table-view-cat-2,#table-view-cat-3,#table-vie
                     "previous":   "Anterior"
                 },
                 "lengthMenu": "MOSTRAR _MENU_ REGISTROS",
+                "emptyTable": "No hay datos disponibles en la tabla",
+                "search":     "BUSCAR"
             }
         }
 );

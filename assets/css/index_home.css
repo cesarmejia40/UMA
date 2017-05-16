@@ -448,3 +448,7 @@ input[type=text]{
 .milabel{
     color: #144229;
 }
+/*Vista Catalogo*/
+.dataTables_filter{
+display:none;
+}

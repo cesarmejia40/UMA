@@ -93,7 +93,7 @@
             <div class="collection collection-2">
             <div class="div-cont-1">
                 <div class="div-cont-2">
-                <table border="1" id="table-view-cat-1" class="display">
+                <table border="1" id="table-view-cat-1">
                     <thead>
                         <tr>
                             <td></td>
@@ -127,7 +127,7 @@
                 </table>
                 </div>
                 <div class="div-cont-2">
-                <table id="table-view-cat-2" class="display">
+                <table id="table-view-cat-2">
                     <thead>
                         <tr>
                             <td></td>
@@ -161,7 +161,7 @@
                 </table>
                 </div>
                 <div class="div-cont-2">
-                <table border="1" id="table-view-cat-3" class="display">
+                <table border="1" id="table-view-cat-3" >
                     <thead>
                         <tr>
                             <td></td>
@@ -195,7 +195,7 @@
                 </table>
                 </div>
                 <div class="div-cont-2">
-                <table border="1" id="table-view-cat-4" class="display">
+                <table border="1" id="table-view-cat-4">
                     <thead>
                         <tr>
                             <td></td>

@@ -57,6 +57,30 @@
     $("#Vendedor").change(function(){
         document.getElementById("nomb").value = $("#Vendedor option:selected").text();
     });
+
+    //////////////////////////////////////////////////////////////
+var table1 = $('#table-view-cat-1,#table-view-cat-2,#table-view-cat-3,#table-view-cat-4').DataTable(
+    {
+    ordering:  false,
+              "info":    false,
+            "bPaginate": false,
+            "paging": false,
+            "lengthMenu": [[5,10,50,100,-1], [5,10,50,100,"Todo"]],
+            "language": {
+                "paginate": {
+                    "first":      "Primera",
+                    "last":       "Última ",
+                    "next":       "Siguiente",
+                    "previous":   "Anterior"
+                },
+                "lengthMenu": "MOSTRAR _MENU_ REGISTROS",
+            }
+        }
+);
+$('#searchCatalogo').on( 'keyup', function () {
+    table1.search( this.value ).draw();
+} );
+///////////////////////////////////////////////////////////////
 </script>
 </body>
 </html>

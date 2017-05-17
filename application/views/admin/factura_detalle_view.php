@@ -2,7 +2,8 @@
     <div class="brown lighten-5 caja">
         <div class="row">
             <div class="backbtn">
-                <a href="../../master" class="waves-effect waves-light btn"  style="background-color: #144229; color: #FFFFFF; border-radius: 5px; margin-top: -6px;">Regresar</a>
+                <a href="../../master" class="waves-effect waves-light btn"  style="background-color: #144229; color: #FFFFFF; border-radius: 5px; margin-top: -6px;">Inicio</a>
+                <a href="javascript:self.history.back()" class="waves-effect waves-light btn"  style="background-color: #144229; color: #FFFFFF; border-radius: 5px; margin-top: -6px;">Regresar</a>
             </div>
         </div>
         <div class="row ">

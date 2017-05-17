@@ -181,5 +181,5 @@ class Login extends CI_Controller {
 
 	}	}
 }
-/* End of file login.php */
-/* Location: ./application/controllers/login.php */
+
+}

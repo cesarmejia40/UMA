@@ -140,8 +140,6 @@ $(document).ready(function(){
     });
      $("#TableCuenta_length,#TableCuenta_info").hide();
     /************END PAGINA CUENTA EN PANTALLA PRINCIPAL**************/
-
-
 });
 
 /************PETICION DE ESTADOS DE FACTURAS**************/
@@ -196,4 +194,7 @@ $("#idClickSearch").click(function(){
         } );
     };
 });
+
+
+
 

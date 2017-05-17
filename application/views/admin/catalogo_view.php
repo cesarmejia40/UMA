@@ -1,4 +1,3 @@
-
 <div class="row" style="padding-left: 25px; padding-right: 25px; width=90%;">
 <div class="col m12" >
 <div class="col m12" >
@@ -76,7 +75,19 @@
     <div class="div-max-1">
         <div class="div-max-2">
             <div class="div-max-3">
-                <b>ARTICULOS INGRESADOS</b><br>                                        
+                <b>ARTICULOS INGRESADOS</b><br>       
+              
+        <div class="container">
+            <div class="Buscar row column">               
+                <div class="col s1 m1 l1 offset-l3 offset-m1"><i class="material-icons ColorS">search</i></div>
+                
+                <div class="input-field col s12 m6 l4 offset-m1">
+                    <input  id="searchCatalogo" type="text" placeholder="Buscar" class="validate mayuscula">
+                    <label for="search"></label>
+                </div>
+            </div>
+        </div>
+
             </div>
             <div class="input-field div-busqueda-prod">
                 <i class="material-icons prefix">search</i>
@@ -120,7 +131,7 @@
                 </table>
                 </div>
                 <div class="div-cont-2">
-                <table id="table-view-cat-2" >
+                <table id="table-view-cat-2">
                     <thead>
                         <tr>
                             <td></td>
@@ -188,7 +199,9 @@
                 </table>
                 </div>
                 <div class="div-cont-2">
+
                <table border="1" id="table-view-cat-4" >
+
                     <thead>
                         <tr>
                             <td></td>

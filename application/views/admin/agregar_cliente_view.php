@@ -56,14 +56,15 @@
                                 </div>
                                     <select id="Vend" name="vendedor" class="validate">
                                         <option value="" disabled selected></option>
-                                        <option value="1" >vendedor1</option>
-                                        <option value="2">vendedor2</option>
-                                        <option value="3">vendedor3</option>
-                                        <option value="4">vendedor4</option>
-                                        <option value="5">vendedor5</option>
-                                        <option value="6">vendedor6</option>
-                                        <option value="7">vendedor7</option>
-                                        <option value="8">vendedor8</option>
+                                        <?php 
+                                        $i = 0;
+                                            foreach($query as $key)
+                                            {
+                                                echo '<option value="'.$query[$i]['ID'].'" >'.$query[$i]['NOMBRE'].'</option>';
+                                                $i++;
+                                            }
+
+                                         ?>
                                     </select>
                                 <label for="Vend">VENDEDORES</label>
                                 <span class="form-help"><span class="ast">*</span>Seleccione un vendedor.</span>

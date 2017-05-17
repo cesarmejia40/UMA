@@ -19,7 +19,10 @@
                                 <td>USUARIO</td>
                                 <td>NOMBRE USUARIO</td>
                                 <td>FECHA DE CREACIÓN</td>
+                                   <?php if ($this->session->userdata("Acceso") == 1 || $this->session->userdata("Acceso") == 2){ ?>
                                 <td>OPCIÓN</td>
+                                    <?php }?>
+
                             </tr>
                             </thead>
                             <tbody>
@@ -29,7 +32,9 @@
                                      <td><?php echo $key['SlpName'];?></td>
                                      <td><?php echo $key['SlpCodCliente'];?></td>
                                      <td><?php echo $key['Fecha_Creacion'];?></td>
+                                     <?php if ($this->session->userdata("Acceso") == 1 || $this->session->userdata("Acceso") == 2){ ?>
                                      <td><a href="<?php echo base_url();?>index.php/eliminar_cliente/<?php echo $key['SlpCode'];?>" class="opc red accent-4">ELIMNAR</a></td>
+                                    <?php }?>
                                  </tr>
                             <?php endforeach ?>
                             </tbody>

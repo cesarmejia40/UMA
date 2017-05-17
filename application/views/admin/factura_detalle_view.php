@@ -16,7 +16,9 @@
                             <td>CÓDIGO DE PRODUCTO</td>
                             <td>DESCRIPCIÓN</td>
                             <td>PUNTOS</td>
+                            <?php if ($this->session->userdata("Acceso") == 1 || $this->session->userdata("Acceso") == 2){?>
                             <td></td>
+                              <?php }?> 
                         </tr>
                      </thead>
                      <tbody>                     
@@ -32,9 +34,11 @@
                                 <td><?php echo $Facts->itmProduc ?></td>                                     
                                 <td><?php echo $Facts->itmDscripcion ?></td>                                     
                                 <td><?php echo $Facts->itmPts ?></td>
-                                <td>                                    
+                                <td>  
+                                <?php if ($this->session->userdata("Acceso") == 1 || $this->session->userdata("Acceso") == 2){?>                                  
                                     <a class="btn-floating red modal-trigger" href="#modal1" onclick="AnularParcial(<?php echo $Facts->itmk ?>)"><i class="material-icons">close</i></a>
                                     <!--<a class="btn-floating red"><i class="material-icons">close</i></a>-->
+                                     <?php }?> 
                                 </td>
                             </tr>                               
                         <?php }}?>                         

@@ -141,15 +141,13 @@ class itm1 extends CI_Model{
 			return NULL;
 		}
 	}
-
-	
 	function indicadores($id){
 		$this->db->where('itmCls',$id);
 		$query=$this->db->get('view_indicadores');
 		if ($query->num_rows()>0) {
 			return $query->result_array();
 		} else {
-			return false;
+			return false; 
 		}
 	}
 

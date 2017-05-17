@@ -9,6 +9,56 @@ $("#cant").numeric();
 
 $(document).ready(function()
 {
+
+    /*****************BUSQUEDA CON INPUT EN VISTA CATALOGO*********************/
+    $('#table-view-cat-4').DataTable( {
+        "paging":   false,
+        "ordering": false,
+        "info":     false,
+        "language": {
+            "sZeroRecords":"No se encontraron resultados"
+        }
+    } );
+    $('#table-view-cat-3').DataTable( {
+        "paging":   false,
+        "ordering": false,
+        "info":     false,
+        "language": {
+            "sZeroRecords":"No se encontraron resultados"
+        }
+
+    } );
+    $('#table-view-cat-2').DataTable( {
+        "paging":   false,
+        "ordering": false,
+        "info":     false,
+        "filter": "hide",
+        "bFilter": "hide",
+        "language": {
+            "sZeroRecords":"No se encontraron resultados"
+        }
+    } );
+    $('#table-view-cat-1').DataTable( {
+        "paging":   false,
+        "ordering": false,
+        "info":     false,
+        "language": {
+            "sZeroRecords":"No se encontraron resultados"
+        }
+    } );    
+    
+    $('#buscar_ar').on( 'keyup', function () {
+        var table1 = $('#table-view-cat-1').DataTable();
+        var table2 = $('#table-view-cat-2').DataTable();
+        var table3 = $('#table-view-cat-3').DataTable();
+        var table4 = $('#table-view-cat-4').DataTable();
+        
+        table1.search( this.value).draw();
+        table2.search( this.value).draw();
+        table3.search( this.value).draw();
+        table4.search( this.value).draw();
+    } );
+
     /******* ACTIVAR LINK DE NAVEGACIÓN MENU IZQUIERDA ********/
     var pathname = window.location.pathname;
     var url= pathname.split('index.php/');
@@ -66,7 +116,7 @@ $(document).ready(function()
         "info":     false,
 
         "pagingType": "full_numbers",
-        "lengthMenu": [[10,-1], [10,"Todo"]] ,
+        "lengthMenu": [[10,-1], [10,"Todo"]],
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla",
             "lengthMenu": '_MENU_ ',
@@ -508,6 +558,7 @@ $(document).ready(function()
             }
         },
     });
+
     $('#clientesReport').removeClass('green').addClass('active');
     var menuLink = "clientesReport";
     $('#menuReport').find('a').click(function(){

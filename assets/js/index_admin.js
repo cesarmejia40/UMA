@@ -9,6 +9,8 @@ $("#cant").numeric();
 
 $(document).ready(function()
 {
+    /*****************INPUTS SOLO DE NUMEROS**************************************/
+    $('#frp').numeric();
 
     /*****************BUSQUEDA CON INPUT EN VISTA CATALOGO*********************/
     $('#table-view-cat-4').DataTable( {
@@ -344,12 +346,14 @@ $(document).ready(function()
                 var frp=$('#frp').val();
                 var cli=cliente;
                 var ruta= $('#vendedor').val();
+                var falt=parseInt($('#faltantes').html());
                 if(frp == "" ||  cli == "" ||  codigoProd == ""){
                     alert('DEBE COMPLETAR LOS DATOS...');
                 }
-                else{
-                    $.post('savefrp/'+frp+'/'+cli+'/'+ruta, function(data){
-                      //  console.log('Frp: '+data);
+                else {
+                    if (falt===0) {
+                        $.post('savefrp/'+frp+'/'+cli+'/'+ruta, function(data){
+                        //console.log('Frp: '+data);
                         if(data == 1){
                             $('#tableCanjePremio tbody tr').each(function(e){
                                 var codPremio= $(this).find("td").eq(1).html();
@@ -374,7 +378,8 @@ $(document).ready(function()
 
                         }
                     });
-                }
+                    } else {alert("Puntos innecesarios para realizar la operación");};
+                };
             });
 
             $('#calcelfrp').click(function(){
